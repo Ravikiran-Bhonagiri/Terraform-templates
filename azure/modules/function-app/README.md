@@ -31,11 +31,12 @@ module "function_app" {
   # ... other optional parameters
 }```
 
+---
 
 ## Input Variables
 
 | Name | Description | Type | Default | Required |
-|---|---|---|---|---|
+|------|-------------|------|---------|----------|
 | `name` | The name of the function app. | `string` | n/a | yes |
 | `resource_group_name` | The name of the resource group in which to create the function app. | `string` | n/a | yes |
 | `location` | The Azure region in which to create the function app. | `string` | n/a | yes |
@@ -59,11 +60,12 @@ module "function_app" {
 | `maximum_elastic_instance_count` | The maximum number of instances for the function app if using a Consumption/Elastic Premium plan. | `number` | `null` | no |
 | `public_network_access_enabled` | Whether or not public network access is allowed for this Function App. Possible values are `true`, `false` or `null` (the default). When set to `null` the access is controlled by the network access configuration on the Function App's App Service Plan. | `bool` | `null` | no |
 
+---
 
 ## Outputs
 
 | Name | Description | Type |
-|---|---|---|
+|------|-------------|------|
 | `id` | The ID of the function app. | `string` |
 | `name` | The name of the function app. | `string` |
 | `host_name` | The hostname of the function app. | `string` |

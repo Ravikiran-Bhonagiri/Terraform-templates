@@ -23,10 +23,12 @@ module "apim" {
   # ... other optional parameters
 }
 
+```
+
 ## Input Variables
 
 | Name | Description | Type | Default | Required |
-|---|---|---|---|---|
+|------|-------------|------|---------|----------|
 | `name` | The name of the API Management instance. | `string` | n/a | yes |
 | `resource_group_name` | The name of the resource group. | `string` | n/a | yes |
 | `location` | The Azure region. | `string` | n/a | yes |
@@ -47,7 +49,7 @@ module "apim" {
 ## Outputs
 
 | Name | Description | Type |
-|---|---|---|
+|------|-------------|------|
 | `id` | The ID of the API Management instance. | `string` |
 | `name` | The name of the API Management instance. | `string` |
 | `gateway_url` | The URL of the API Management gateway. | `string` |

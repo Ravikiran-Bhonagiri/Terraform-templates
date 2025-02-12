@@ -14,7 +14,7 @@ This section provides detailed examples of how to use the module with different 
 
 This example deploys a Linux App Service Plan with a Standard S1 SKU.
 
-
+```terraform
 module "app_service_plan" {
   source = "path/to/your/module/azure/modules/app-service-plan" # Replace with the actual path
 

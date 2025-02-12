@@ -26,7 +26,9 @@ module "http_function_app" {
   site_config = {
     always_on = true
   }
-}```
+}
+
+```
 
 This example deploys a Python function app that's triggered by HTTP requests. This means the function will execute when it receives an HTTP request (like a GET, POST, etc.).
 
@@ -64,6 +66,7 @@ module "timer_function_app" {
     always_on = true
   }
 }
+
 ```
 
 This example sets up a C# Function App that's triggered on a schedule using a timer trigger.
@@ -95,6 +98,7 @@ module "consumption_function_app" {
     "FUNCTIONS_WORKER_RUNTIME" = "node"
   }
 }
+
 ```
 
 This example shows how to deploy a Function App using the Consumption plan (serverless) and how to enable a system-assigned managed identity.
@@ -129,6 +133,7 @@ module "user_assigned_mi_function_app" {
     "FUNCTIONS_WORKER_RUNTIME" = "node" # Or your preferred runtime
   }
 }
+
 ```
 
 This example demonstrates how to configure a user-assigned managed identity for your Function App.

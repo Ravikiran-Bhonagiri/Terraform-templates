@@ -21,7 +21,7 @@ module "apim" {
   virtual_network_enabled = true
   virtual_network_subnet_id = "/subscriptions/xxxx/resourceGroups/xxxx/providers/Microsoft.Network/virtualNetworks/xxxx/subnets/xxxx"
   # ... other optional parameters
-}
+}```
 
 
 ## Heelo

@@ -31,6 +31,7 @@ module "function_app" {
   # ... other optional parameters
 }```
 
+
 ## Input Variables
 
 | Name | Description | Type | Default | Required |

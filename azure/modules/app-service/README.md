@@ -140,7 +140,7 @@ site_config = {
   # ... other site configuration options
 }
 
----
+```
 
 ** Outputs: **
 

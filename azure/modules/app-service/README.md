@@ -75,7 +75,7 @@ module "app_service" {
 }
 
 
-## Input Variables
+**Input Variables: **
 
 | Name | Description | Type | Default | Required |
 |---|---|---|---|---|
@@ -130,7 +130,7 @@ site_config = {
   # ... other site configuration options
 }
 
-## Outputs
+** Outputs: **
 
 | Name | Description | Type |
 |---|---|---|

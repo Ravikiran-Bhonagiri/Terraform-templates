@@ -28,7 +28,6 @@ module "app_service" {
   }
 }
 
----
 
 module "app_service_plan" { # Example App Service Plan module
   source = "path/to/your/app_service_plan_module"
@@ -41,10 +40,11 @@ module "app_service_plan" { # Example App Service Plan module
   }
 }
 
----
+```
 
 **Windows Web App:**
 
+```terraform
 module "app_service" {
   source = "path/to/your/module/azure/modules/app-service"
 
@@ -58,10 +58,13 @@ module "app_service" {
   }
 }
 
+```
+
 ---
 
 **Linux Function App:**
 
+```terraform
 module "app_service" {
   source = "path/to/your/module/azure/modules/app-service"
 
@@ -78,12 +81,12 @@ module "app_service" {
   }
 }
 
----
+```
 
 **Input Variables: **
 
 | Name | Description | Type | Default | Required |
-|---|---|---|---|---|
+|------|-------------|------|---------|----------|
 | `name` | The name of the App Service. | `string` | n/a | yes |
 | `resource_group_name` | The name of the resource group. | `string` | n/a | yes |
 | `location` | The Azure region. | `string` | n/a | yes |
@@ -142,7 +145,7 @@ site_config = {
 ** Outputs: **
 
 | Name | Description | Type |
-|---|---|---|
+|------|-------------|------|
 | `id` | The ID of the App Service. | `string` |
 | `name` | The name of the App Service. | `string` |
 | `default_site_hostname` | The default site hostname of the App Service. | `string` |

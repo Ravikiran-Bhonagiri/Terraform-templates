@@ -25,12 +25,14 @@ module "apim" {
 
 ## Input Variables
 
+## Input Variables
+
 | Name | Description | Type | Default | Required |
 |---|---|---|---|---|
 | `name` | The name of the API Management instance. | `string` | n/a | yes |
 | `resource_group_name` | The name of the resource group. | `string` | n/a | yes |
 | `location` | The Azure region. | `string` | n/a | yes |
-| `sku_name` | The SKU of the API Management instance. | `string` | n/a | yes |  Valid values: "Developer", "Basic", "Standard", "Premium", "Consumption" |
+| `sku_name` | The SKU of the API Management instance. | `string` | n/a | yes | Valid values: "Developer", "Basic", "Standard", "Premium", "Consumption" |
 | `virtual_network_enabled` | Whether to enable virtual network integration. | `bool` | `false` | no |
 | `virtual_network_subnet_id` | The ID of the subnet for virtual network integration. Required if `virtual_network_enabled` is `true`. | `string` | `null` | no |
 | `capacity` | The number of scale units for the API Management instance. Only applicable for certain SKUs. | `number` | `1` | no |

@@ -28,6 +28,8 @@ module "app_service" {
   }
 }
 
+---
+
 module "app_service_plan" { # Example App Service Plan module
   source = "path/to/your/app_service_plan_module"
   name = "example-asp"
@@ -39,6 +41,7 @@ module "app_service_plan" { # Example App Service Plan module
   }
 }
 
+---
 
 **Windows Web App:**
 
@@ -55,6 +58,7 @@ module "app_service" {
   }
 }
 
+---
 
 **Linux Function App:**
 
@@ -74,6 +78,7 @@ module "app_service" {
   }
 }
 
+---
 
 **Input Variables: **
 
@@ -92,6 +97,8 @@ module "app_service" {
 | `hostname_bindings` | A list of `hostname_bindings` blocks as defined below. | `list(object({ hostname = string }))` | `[]` | no |
 | `deployment_slots` | A list of `deployment_slots` blocks as defined below. | `list(object({ name = string, site_config = optional(object), app_settings = optional(map(string)) }))` | `[]` | no |
 | `tags` | A map of tags to apply. | `map(string)` | `{}` | no |
+
+---
 
 ## Detailed Explanation of `app_settings` and `site_config`
 
@@ -129,6 +136,8 @@ site_config = {
   managed_pipeline_mode = "Integrated" # For Windows, "Integrated" or "Classic"
   # ... other site configuration options
 }
+
+---
 
 ** Outputs: **
 

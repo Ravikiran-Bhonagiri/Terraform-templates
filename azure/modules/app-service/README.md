@@ -83,7 +83,7 @@ module "app_service" {
 
 ```
 
-**Input Variables: **
+## Input Variables
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|----------|
@@ -142,7 +142,7 @@ site_config = {
 
 ```
 
-** Outputs: **
+## Outputs
 
 | Name | Description | Type |
 |------|-------------|------|

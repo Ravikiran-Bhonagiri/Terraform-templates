@@ -29,7 +29,7 @@ module "function_app" {
   https_only = true
   client_affinity_enabled = false
   # ... other optional parameters
-}
+}```
 
 ## Input Variables
 

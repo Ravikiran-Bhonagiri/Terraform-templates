@@ -1,78 +1,76 @@
-variable "resource_group_name" {
+# Required Variables
+
+variable "function_app_name" {
+  description = "(Required) The name of the Azure Function App. This must be globally unique."
   type        = string
-  description = "Resource group name"
+  validation {
+    condition     = length(var.function_app_name) >= 2 && length(var.function_app_name) <= 60
+    error_message = "The Function App name must be between 2 and 60 characters long."
+  }
 }
 
 variable "location" {
+  description = "(Required) The Azure region where the Function App will be deployed."
   type        = string
-  description = "Azure region"
 }
 
-variable "app_name" {
+variable "resource_group_name" {
+  description = "(Required) The name of the existing resource group where the Function App will be deployed."
   type        = string
-  description = "Application name"
 }
 
-variable "environment" {
+variable "app_service_plan_id" {
+  description = "(Required) The ID of the existing App Service Plan to be used by the Function App."
   type        = string
-  description = "Environment (dev, staging, prod)"
 }
 
-variable "location_short" {
+variable "storage_account_name" {
+  description = "(Required) The name of the existing storage account to be used by the Function App."
   type        = string
-  description = "Short form of Azure region"
 }
 
-variable "tags" {
-  type        = map(string)
-  description = "Resource tags"
-  default     = {}
-}
-
-variable "storage_replication_type" {
+variable "storage_account_access_key" {
+  description = "(Required) The access key of the existing storage account. This should be marked as sensitive."
   type        = string
-  description = "Storage account replication type"
-  default     = "GRS"
+  sensitive   = true
 }
 
-variable "storage_public_access_enabled" {
-  type        = bool
-  description = "Enable public network access for storage"
-  default     = false
-}
+# Optional Variables
 
-variable "service_plan_sku" {
+variable "function_app_version" {
+  description = "(Optional) The version of the Function App runtime. Defaults to '~4'."
   type        = string
-  description = "App Service Plan SKU"
-  default     = "EP1"
+  default     = "~4"
+  validation {
+    condition     = contains(["~3", "~4"], var.function_app_version)
+    error_message = "The Function App version must be either '~3' or '~4'."
+  }
+}
+
+variable "function_app_runtime" {
+  description = "(Optional) The runtime stack for the Function App (e.g., 'node', 'python', 'dotnet'). Defaults to 'node'."
+  type        = string
+  default     = "node"
+  validation {
+    condition     = contains(["node", "python", "dotnet"], var.function_app_runtime)
+    error_message = "The Function App runtime must be one of 'node', 'python', or 'dotnet'."
+  }
 }
 
 variable "always_on" {
+  description = "(Optional) Whether the Function App should be always on. Defaults to 'true'."
   type        = bool
-  description = "Enable Always On feature"
   default     = true
 }
 
-variable "app_scale_limit" {
-  type        = number
-  description = "Maximum number of workers"
-  default     = 10
-}
-
-variable "runtime_version" {
-  type        = string
-  description = "Function runtime version"
-  default     = "6.0"
-}
-
-variable "runtime_stack" {
-  type        = string
-  description = "Function runtime stack"
-  default     = "dotnet"
-}
-
 variable "app_settings" {
+  description = "(Optional) A map of key-value pairs for Function App settings."
   type        = map(string)
-  description = "Additional application settings"
+  default     = {}
+}
+
+variable "tags" {
+  description = "(Optional) A map of tags to apply to the Function App."
+  type        = map(string)
   default     = {}
 }

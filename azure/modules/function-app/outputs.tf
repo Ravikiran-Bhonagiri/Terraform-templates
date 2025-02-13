@@ -1,15 +1,41 @@
-output "function_app_name" {
-  value = azurerm_linux_function_app.main.name
-}
-
 output "function_app_id" {
-  value = azurerm_linux_function_app.main.id
+  description = "The ID of the Azure Function App."
+  value       = azurerm_function_app.fa.id
 }
 
-output "storage_account_name" {
-  value = azurerm_storage_account.function.name
+output "function_app_name" {
+  description = "The name of the Azure Function App."
+  value       = azurerm_function_app.fa.name
 }
 
-output "service_plan_id" {
-  value = azurerm_service_plan.main.id
+output "function_app_default_hostname" {
+  description = "The default hostname of the Azure Function App."
+  value       = azurerm_function_app.fa.default_hostname
+}
+
+output "function_app_outbound_ip_addresses" {
+  description = "The outbound IP addresses of the Azure Function App."
+  value       = azurerm_function_app.fa.outbound_ip_addresses
+}
+
+output "function_app_connection_string" {
+  description = "The connection string of the Azure Function App."
+  value       = azurerm_function_app.fa.connection_string
+  sensitive   = true
+}
+
+output "function_app_principal_id" {
+  description = "The Principal ID of the Azure Function App's managed identity (if enabled)."
+  value       = azurerm_function_app.fa.identity[0].principal_id
+}
+
+output "function_app_tenant_id" {
+  description = "The Tenant ID of the Azure Function App's managed identity (if enabled)."
+  value       = azurerm_function_app.fa.identity[0].tenant_id
+}
+
+output "function_app_site_credentials" {
+  description = "The site credentials (username and password) for the Azure Function App."
+  value       = azurerm_function_app.fa.site_credential
+  sensitive   = true
 }
